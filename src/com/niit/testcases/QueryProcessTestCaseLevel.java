@@ -81,7 +81,7 @@ public class QueryProcessTestCaseLevel
 	public void withWhereGreaterThanOrEqualToTestCase()throws Exception //Test Case 6
 	{
 		
-		DataSetter dataSet=query.executeQuery("select city,name,salary from E:/Emp.csv where Salary>=35000");
+		DataSetter dataSet=query.executeQuery("select City,Name,Salary from E:/Emp.csv where Salary>=35000");
 		assertNotNull(dataSet);
 		display("withWhereLessThanOrEqualToTestCase",dataSet);
 		
@@ -101,7 +101,7 @@ public class QueryProcessTestCaseLevel
 	public void withWhereEqualAndNotEqualTestCase()throws Exception //Test Case 8
 	{
 		
-		DataSetter dataSet=query.executeQuery("select City,Name,Salary from E:/Emp.csv where Salary>=30000 and salary<=38000");
+		DataSetter dataSet=query.executeQuery("select City,Name,Salary from E:/Emp.csv where Salary>=30000 and Salary<=38000");
 		assertNotNull(dataSet);
 		display("withWhereEqualAndNotEqualTestCase",dataSet);
 		
@@ -131,7 +131,7 @@ public class QueryProcessTestCaseLevel
 	public void selectSumColumnsWithWhereTestCase()throws Exception //Test Case 11
 	{
 		
-		DataSetter dataSet=query.executeQuery("select sum(Salary) from E:/Emp.csv where city=Bangalore");
+		DataSetter dataSet=query.executeQuery("select sum(Salary) from E:/Emp.csv where City=Bangalore");
 		assertNotNull(dataSet);
 		display("selectSumColumnsWithWhereTestCase",dataSet);
 		

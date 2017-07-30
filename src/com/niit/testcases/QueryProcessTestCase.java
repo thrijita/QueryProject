@@ -21,7 +21,7 @@ public class QueryProcessTestCase
 		query=new QueryValidator();
 	}
 	
-	/*@Test
+	@Test
 	public void allColumnsWithoutWhereClause()throws Exception
 	{
 		String queryString="select * from E:\\Emp.csv";
@@ -33,7 +33,7 @@ public class QueryProcessTestCase
 	@Test
 	public void selectedColumnsWithoutWhereClause()throws Exception
 	{
-		String queryString="select EmpName,EmpID,Age from E:\\Emp.csv";
+		String queryString="select Name,EmpID,Salary from E:\\Emp.csv";
 		assertNotNull(query.executeQuery(queryString));
 		System.out.println(queryString);
 		displayRecords(query.executeQuery(queryString));
@@ -42,8 +42,8 @@ public class QueryProcessTestCase
 	@Test
 	public void allColumnsWithWhereClauseWithString()throws Exception
 	{
-		String queryString="select * from E:\\Emp.csv where EmpName=Vinod";
-		DataSet dataSet=query.executeQuery(queryString);
+		String queryString="select * from E:\\Emp.csv where Name=Will";
+		DataSetter dataSet=query.executeQuery(queryString);
 		assertNotNull(dataSet.getResultSet().size());
 		System.out.println(queryString);
 		displayRecords(dataSet);
@@ -51,8 +51,8 @@ public class QueryProcessTestCase
 	@Test
 	public void allColumnsWithWhereClauseWithInteger()throws Exception
 	{
-		String queryString1="select * from E:\\Emp.csv where Age>=21";
-		DataSet dataSet1=query.executeQuery(queryString1);
+		String queryString1="select * from E:\\Emp.csv where Salary>=28000";
+		DataSetter dataSet1=query.executeQuery(queryString1);
 		assertNotNull(dataSet1.getResultSet().get(0));
 		System.out.println(queryString1);
 		displayRecords(dataSet1);
@@ -60,8 +60,8 @@ public class QueryProcessTestCase
 	@Test
 	public void allColumnsWithMultipleWhereClauseWithString()throws Exception
 	{
-		String queryString2="select * from E:\\Emp.csv where Age>20 or City = Bangalore and EmpName=Vinod";
-		DataSet dataSet2=query.executeQuery(queryString2);
+		String queryString2="select * from E:\\Emp.csv where Salary>30000 or City = Bangalore and Name=Anant";
+		DataSetter dataSet2=query.executeQuery(queryString2);
 		assertNotNull(dataSet2.getResultSet().get(0));
 		System.out.println(queryString2);
 		displayRecords(dataSet2);
@@ -70,8 +70,8 @@ public class QueryProcessTestCase
 	@Test
 	public void allColumnsWithOrderByClause()throws Exception
 	{
-		String queryString2="select * from E:\\Emp.csv order by Age";
-		DataSet dataSet2=query.executeQuery(queryString2);
+		String queryString2="select * from E:\\Emp.csv order by Salary";
+		DataSetter dataSet2=query.executeQuery(queryString2);
 		assertNotNull(dataSet2.getResultSet().get(0));
 		System.out.println(queryString2);
 		displayRecords(dataSet2);
@@ -80,12 +80,12 @@ public class QueryProcessTestCase
 	@Test
 	public void aggregateDataDisplay()throws Exception
 	{
-		String queryString3="select sum(Age),min(Age),max(Age),count(City) from E:\\Emp.csv";
-		DataSet dataSet3=query.executeQuery(queryString3);
+		String queryString3="select sum(Salary),min(Salary),max(Salary),count(City) from E:\\Emp.csv";
+		DataSetter dataSet3=query.executeQuery(queryString3);
 		assertNotNull(dataSet3.getAggregateRow());
 		System.out.println(queryString3);
 		displayRecords(dataSet3);
-	}*/
+	}
 	
 	@Test
 	public void aggregateDataDisplayWithWhereClause()throws Exception
